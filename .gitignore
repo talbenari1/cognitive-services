@@ -1,0 +1,5 @@
+# Ignore installed modules
+node_modules
+
+# Ignore compiled code
+build

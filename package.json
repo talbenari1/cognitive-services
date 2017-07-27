@@ -1,0 +1,33 @@
+{
+  "name": "cognitive-services",
+  "version": "0.1.0",
+  "description": "The Cognitive Services JavaScript SDK",
+  "main": "src/index.ts",
+  "scripts": {
+    "docs": "typedoc --out docs .",
+    "lint": "tslint --project tsconfig.json --type-check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talbenari1/cognitive-services.git"
+  },
+  "keywords": [],
+  "author": "Tal Ben-Ari <t-tabena@microsoft.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talbenari1/cognitive-services/issues"
+  },
+  "homepage": "https://github.com/talbenari1/cognitive-services#readme",
+  "dependencies": {
+    "@types/superagent": "^3.5.3",
+    "superagent": "^3.5.2"
+  },
+  "devDependencies": {
+    "tslint": "^5.5.0",
+    "tslint-config-prettier": "^1.1.0",
+    "tslint-config-standard": "^6.0.1",
+    "tslint-language-service": "^0.9.6",
+    "typedoc": "^0.7.2",
+    "typescript": "^2.4.2"
+  }
+}
