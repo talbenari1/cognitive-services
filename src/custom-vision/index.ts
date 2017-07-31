@@ -36,6 +36,7 @@ export class CustomVision {
     if (predictionKey) this.predictionKey = predictionKey
 
     if (projectID) {
+      this.setProject(projectID)
       void (async () => {
         if (!predictionKey) {
           const info = await this.getAccountInfo()
