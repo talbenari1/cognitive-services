@@ -7,7 +7,7 @@ export { types }
 /** The Bing API account manager. */
 export class Bing {
   /** The rate limit (Hz) across all Bing Search APIs on a free account. */
-  public static BING_LIMIT = 7
+  static BING_LIMIT = 7
 
   /** The image search handler for this account. */
   public images: ImageSearch
