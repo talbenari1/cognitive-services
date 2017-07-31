@@ -1,9 +1,10 @@
-import { get } from 'superagent'
+import { get, post } from 'superagent'
 import { genBaseURL } from '../utils'
 import { region, service, version } from './constants'
 import { CustomVisionPredictor } from './predictor'
+import { CustomVisionTrainer } from './trainer'
 import * as types from './types'
-import { Account, Config, Domain } from './types'
+import { Account, Config, Domain, Project } from './types'
 
 export { types }
 
@@ -18,8 +19,11 @@ export class CustomVision {
   /** The primary prediction key associated with the account. */
   private predictionKey?: string
 
-  /** The active project. */
+  /** The active project's prediction handler. */
   private predictor?: CustomVisionPredictor
+
+  /** The active project's training handler. */
+  private trainer?: CustomVisionTrainer
 
   /** The account information. */
   private accountInfo?: Account
@@ -42,13 +46,44 @@ export class CustomVision {
     }
   }
 
-  /** The predict method, pulled from the predictor for easier access. */
-  get predict() {
-    if (!this.predictor) {
-      throw new Error('No project ID provided')
-    }
+  /**
+   * Create a new project.
+   *
+   * @param name the name of the project to create.
+   * @param description the description of the project.
+   * @param domain the name of the domain to use.
+   * @returns the created project's details.
+   */
+  async createProject(
+    name: string,
+    description: string,
+    domain = 'General'
+  ): Promise<Project> {
+    const project: Project = (await post(CustomVision.baseURL + '/projects')
+      .set('Training-Key', this.trainingKey)
+      .query({
+        description,
+        domainId: (await this.findDomain(domain)).Id || '',
+        name
+      })).body
 
-    return this.predictor.predict
+    this.setProject(project.Id)
+
+    return project
+  }
+
+  /**
+   * Get a domain object given its name.
+   *
+   * @param name the domain name.
+   * @returns the domain's details.
+   */
+  async findDomain(name: string): Promise<Domain> {
+    const domain = (await this.getDomains()).find(
+      (el: Domain) => el.Name === name
+    )
+    if (!domain) throw new Error(`Domain not found: ${name}`)
+    return domain
   }
 
   /**
@@ -85,16 +120,35 @@ export class CustomVision {
   }
 
   /**
-   * Get a domain object given its name.
-   *
-   * @param name the domain name.
-   * @returns the domain's details.
+   * Get all projects associated with the account.
+   * 
+   * @returns the projects' details.
    */
-  async findDomain(name: string): Promise<Domain> {
-    const domain = (await this.getDomains()).find(
-      (el: Domain) => el.Name === name
-    )
-    if (!domain) throw new Error(`Domain not found: ${name}`)
-    return domain
+  async getProjects(): Promise<Project[]> {
+    return (await get(CustomVision.baseURL + '/projects').set(
+      'Training-Key',
+      this.trainingKey
+    )).body
+  }
+
+  /** The predict method, pulled from the predictor for easier access. */
+  get predict() {
+    if (!this.predictor) {
+      throw new Error('No project ID provided')
+    }
+
+    return this.predictor.predict
+  }
+
+  /**
+   * Set the current active project.
+   * 
+   * @param projectID the ID of the project to make active.
+   */
+  setProject(projectID: string) {
+    this.trainer = new CustomVisionTrainer({
+      trainingKey: this.trainingKey,
+      projectID
+    })
   }
 }

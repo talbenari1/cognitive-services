@@ -98,16 +98,29 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="_custom_vision_index_.customvision.html#accountinfo" class="tsd-kind-icon">account<wbr>Info</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="_custom_vision_index_.customvision.html#domains" class="tsd-kind-icon">domains</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="_custom_vision_index_.customvision.html#predictionkey" class="tsd-kind-icon">prediction<wbr>Key</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="_custom_vision_index_.customvision.html#predictor" class="tsd-kind-icon">predictor</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="_custom_vision_index_.customvision.html#trainer" class="tsd-kind-icon">trainer</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="_custom_vision_index_.customvision.html#trainingkey" class="tsd-kind-icon">training<wbr>Key</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="_custom_vision_index_.customvision.html#baseurl" class="tsd-kind-icon">baseURL</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-external">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-external"><a href="_custom_vision_index_.customvision.html#predict" class="tsd-kind-icon">predict</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_custom_vision_index_.customvision.html#createproject" class="tsd-kind-icon">create<wbr>Project</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_custom_vision_index_.customvision.html#finddomain" class="tsd-kind-icon">find<wbr>Domain</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_custom_vision_index_.customvision.html#getaccountinfo" class="tsd-kind-icon">get<wbr>Account<wbr>Info</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_custom_vision_index_.customvision.html#getdomains" class="tsd-kind-icon">get<wbr>Domains</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_custom_vision_index_.customvision.html#getprojects" class="tsd-kind-icon">get<wbr>Projects</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_custom_vision_index_.customvision.html#setproject" class="tsd-kind-icon">set<wbr>Project</a></li>
 							</ul>
 						</section>
 					</div>
@@ -125,7 +138,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/index.ts#L24">custom-vision/index.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L32">custom-vision/index.ts:32</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -154,46 +167,76 @@
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
 					<a name="accountinfo" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> account<wbr>Info</h3>
-					<div class="tsd-signature tsd-kind-icon">account<wbr>Info<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_custom_vision_types_.account.html" class="tsd-signature-type">Account</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> account<wbr>Info</h3>
+					<div class="tsd-signature tsd-kind-icon">account<wbr>Info<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_custom_vision_types_.account.html" class="tsd-signature-type">Account</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/index.ts#L24">custom-vision/index.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L29">custom-vision/index.ts:29</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The account information</p>
+							<p>The account information.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
+					<a name="domains" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> domains</h3>
+					<div class="tsd-signature tsd-kind-icon">domains<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_custom_vision_types_.domain.html" class="tsd-signature-type">Domain</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L32">custom-vision/index.ts:32</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>All available domains in Custom Vision.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
 					<a name="predictionkey" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> prediction<wbr>Key</h3>
-					<div class="tsd-signature tsd-kind-icon">prediction<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> prediction<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">prediction<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/index.ts#L18">custom-vision/index.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L20">custom-vision/index.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The prediction key associated with the account.</p>
+							<p>The primary prediction key associated with the account.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
 					<a name="predictor" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> predictor</h3>
-					<div class="tsd-signature tsd-kind-icon">predictor<span class="tsd-signature-symbol">:</span> <a href="_custom_vision_predictor_.customvisionpredictor.html" class="tsd-signature-type">CustomVisionPredictor</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> predictor</h3>
+					<div class="tsd-signature tsd-kind-icon">predictor<span class="tsd-signature-symbol">:</span> <a href="_custom_vision_predictor_.customvisionpredictor.html" class="tsd-signature-type">CustomVisionPredictor</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/index.ts#L21">custom-vision/index.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L23">custom-vision/index.ts:23</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The active project.</p>
+							<p>The active project&#39;s prediction handler.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
+					<a name="trainer" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> trainer</h3>
+					<div class="tsd-signature tsd-kind-icon">trainer<span class="tsd-signature-symbol">:</span> <a href="_custom_vision_trainer_.customvisiontrainer.html" class="tsd-signature-type">CustomVisionTrainer</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L26">custom-vision/index.ts:26</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The active project&#39;s training handler.</p>
 						</div>
 					</div>
 				</section>
@@ -203,12 +246,12 @@
 					<div class="tsd-signature tsd-kind-icon">training<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/index.ts#L15">custom-vision/index.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L17">custom-vision/index.ts:17</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The training key associated with the account.</p>
+							<p>The primary training key associated with the account.</p>
 						</div>
 					</div>
 				</section>
@@ -218,7 +261,7 @@
 					<div class="tsd-signature tsd-kind-icon">baseURL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;genBaseURL(region, service, version) + &#x27;/Training&#x27;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/index.ts#L12">custom-vision/index.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L14">custom-vision/index.ts:14</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -229,7 +272,108 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+					<a name="predict" class="tsd-anchor"></a>
+					<h3>predict</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> predict<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_custom_vision_predictor_.customvisionpredictor.html#predict" class="tsd-signature-type">predict</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L135">custom-vision/index.ts:135</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The predict method, pulled from the predictor for easier access.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="_custom_vision_predictor_.customvisionpredictor.html#predict" class="tsd-signature-type">predict</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="createproject" class="tsd-anchor"></a>
+					<h3>create<wbr>Project</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Project<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, description<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, domain<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_custom_vision_types_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L57">custom-vision/index.ts:57</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a new project.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the name of the project to create.</p>
+									</div>
+								</li>
+								<li>
+									<h5>description: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the description of the project.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> domain: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;General&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the name of the domain to use.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_custom_vision_types_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>the created project&#39;s details.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="finddomain" class="tsd-anchor"></a>
+					<h3>find<wbr>Domain</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Domain<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_custom_vision_types_.domain.html" class="tsd-signature-type">Domain</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L81">custom-vision/index.ts:81</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get a domain object given its name.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the domain name.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_custom_vision_types_.domain.html" class="tsd-signature-type">Domain</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>the domain&#39;s details.</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
 					<a name="getaccountinfo" class="tsd-anchor"></a>
 					<h3>get<wbr>Account<wbr>Info</h3>
@@ -240,7 +384,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/index.ts#L49">custom-vision/index.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L94">custom-vision/index.ts:94</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -250,6 +394,92 @@
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_custom_vision_types_.account.html" class="tsd-signature-type">Account</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>the account info.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="getdomains" class="tsd-anchor"></a>
+					<h3>get<wbr>Domains</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Domains<span class="tsd-signature-symbol">(</span>force<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_custom_vision_types_.domain.html" class="tsd-signature-type">Domain</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L111">custom-vision/index.ts:111</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get a list of all available domains.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> force: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>whether or not to force the function to re-fetch the info, disabling memoization.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_custom_vision_types_.domain.html" class="tsd-signature-type">Domain</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>the list of domains.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="getprojects" class="tsd-anchor"></a>
+					<h3>get<wbr>Projects</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Projects<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_custom_vision_types_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L127">custom-vision/index.ts:127</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get all projects associated with the account.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_custom_vision_types_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>the projects&#39; details.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="setproject" class="tsd-anchor"></a>
+					<h3>set<wbr>Project</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Project<span class="tsd-signature-symbol">(</span>projectID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/9cf11aa/src/custom-vision/index.ts#L148">custom-vision/index.ts:148</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the current active project.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>projectID: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the ID of the project to make active.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -295,6 +525,9 @@
 						<a href="../modules/_custom_vision_predictor_.html">"custom-<wbr>vision/predictor"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="../modules/_custom_vision_trainer_.html">"custom-<wbr>vision/trainer"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="../modules/_custom_vision_types_.html">"custom-<wbr>vision/types"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
@@ -319,10 +552,16 @@
 								<a href="_custom_vision_index_.customvision.html#accountinfo" class="tsd-kind-icon">account<wbr>Info</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
+								<a href="_custom_vision_index_.customvision.html#domains" class="tsd-kind-icon">domains</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
 								<a href="_custom_vision_index_.customvision.html#predictionkey" class="tsd-kind-icon">prediction<wbr>Key</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
 								<a href="_custom_vision_index_.customvision.html#predictor" class="tsd-kind-icon">predictor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
+								<a href="_custom_vision_index_.customvision.html#trainer" class="tsd-kind-icon">trainer</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
 								<a href="_custom_vision_index_.customvision.html#trainingkey" class="tsd-kind-icon">training<wbr>Key</a>
@@ -330,8 +569,26 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
 								<a href="_custom_vision_index_.customvision.html#baseurl" class="tsd-kind-icon">baseURL</a>
 							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-external">
+								<a href="_custom_vision_index_.customvision.html#predict" class="tsd-kind-icon">predict</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_custom_vision_index_.customvision.html#createproject" class="tsd-kind-icon">create<wbr>Project</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_custom_vision_index_.customvision.html#finddomain" class="tsd-kind-icon">find<wbr>Domain</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_custom_vision_index_.customvision.html#getaccountinfo" class="tsd-kind-icon">get<wbr>Account<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_custom_vision_index_.customvision.html#getdomains" class="tsd-kind-icon">get<wbr>Domains</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_custom_vision_index_.customvision.html#getprojects" class="tsd-kind-icon">get<wbr>Projects</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_custom_vision_index_.customvision.html#setproject" class="tsd-kind-icon">set<wbr>Project</a>
 							</li>
 						</ul>
 					</li>

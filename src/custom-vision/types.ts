@@ -3,6 +3,11 @@ export interface PredictorConfig {
   projectID: string
 }
 
+export interface TrainerConfig {
+  trainingKey: string
+  projectID: string
+}
+
 export interface Config {
   predictionKey?: string
   trainingKey: string
