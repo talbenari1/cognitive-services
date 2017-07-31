@@ -6,7 +6,7 @@ import * as types from './types'
 
 export { types }
 
-type Binary = Blob | Buffer | ArrayBuffer
+export type Binary = Blob | Buffer | ArrayBuffer
 
 /** The Custom Vision API prediction handler. */
 export class CustomVisionPredictor {

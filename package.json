@@ -2,11 +2,12 @@
   "name": "cognitive-services",
   "version": "0.1.0",
   "description": "The Cognitive Services JavaScript SDK",
-  "main": "src/index.ts",
+  "main": "build",
   "scripts": {
+    "build": "tsc --project tsconfig.json",
     "docs": "typedoc --out docs .",
     "lint": "tslint --project tsconfig.json --type-check",
-    "postinstall": "tsc"
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
