@@ -5,7 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "docs": "typedoc --out docs .",
-    "lint": "tslint --project tsconfig.json --type-check"
+    "lint": "tslint --project tsconfig.json --type-check",
+    "postinstall": "tsc"
   },
   "repository": {
     "type": "git",

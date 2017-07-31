@@ -31,7 +31,6 @@ export class CustomVision {
       void (async () => {
         if (!predictionKey) {
           const info = await this.getAccountInfo()
-          console.log(info)
           predictionKey = info.Keys.PredictionKeys.PrimaryKey
         }
         this.predictor = new CustomVisionPredictor({ predictionKey, projectID })
