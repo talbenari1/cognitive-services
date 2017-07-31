@@ -7,7 +7,7 @@
     "build": "tsc --project tsconfig.json",
     "docs": "typedoc --out docs .",
     "lint": "tslint --project tsconfig.json --type-check",
-    "postinstall": "npm run build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,5 @@
-import { genBaseURL } from '../utils'
 import { get } from 'superagent'
+import { genBaseURL } from '../utils'
 import { service, version } from './constants'
 import { Config, Market } from './types'
 
