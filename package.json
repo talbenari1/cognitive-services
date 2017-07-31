@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "The Cognitive Services JavaScript SDK",
   "main": "build",
+  "typings": "./build/typings",
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "docs": "typedoc --out docs .",
