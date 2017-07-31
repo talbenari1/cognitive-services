@@ -96,11 +96,11 @@
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="predictionkey" class="tsd-anchor"></a>
-					<h3>prediction<wbr>Key</h3>
-					<div class="tsd-signature tsd-kind-icon">prediction<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> prediction<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">prediction<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in custom-vision/types.ts:2</li>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L7">custom-vision/types.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -110,7 +110,7 @@
 					<div class="tsd-signature tsd-kind-icon">projectID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in custom-vision/types.ts:4</li>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L9">custom-vision/types.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -120,7 +120,7 @@
 					<div class="tsd-signature tsd-kind-icon">training<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in custom-vision/types.ts:3</li>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L8">custom-vision/types.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -137,6 +137,9 @@
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_index_.html">"index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_test_.html">"test"</a>
 					</li>
 					<li class="label tsd-is-external">
 						<span>Externals</span>
@@ -160,10 +163,7 @@
 						<a href="../modules/_custom_vision_index_.html">"custom-<wbr>vision/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="../modules/_custom_vision_prediction_.html">"custom-<wbr>vision/prediction"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="../modules/_custom_vision_training_.html">"custom-<wbr>vision/training"</a>
+						<a href="../modules/_custom_vision_predictor_.html">"custom-<wbr>vision/predictor"</a>
 					</li>
 					<li class="current tsd-kind-external-module tsd-is-external">
 						<a href="../modules/_custom_vision_types_.html">"custom-<wbr>vision/types"</a>
@@ -178,6 +178,15 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.account.html" class="tsd-kind-icon">Account</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.accountquota.html" class="tsd-kind-icon">Account<wbr>Quota</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.apikeys.html" class="tsd-kind-icon">Api<wbr>Keys</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
@@ -197,16 +206,76 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.createimageresult.html" class="tsd-kind-icon">Create<wbr>Image<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.createimagesummary.html" class="tsd-kind-icon">Create<wbr>Image<wbr>Summary</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.domain.html" class="tsd-kind-icon">Domain</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.image.html" class="tsd-kind-icon">Image</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.imageidcreatebatch.html" class="tsd-kind-icon">Image<wbr>IdCreate<wbr>Batch</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.imagelabel.html" class="tsd-kind-icon">Image<wbr>Label</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.imagepredictionresult.html" class="tsd-kind-icon">Image<wbr>Prediction<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.imagetag.html" class="tsd-kind-icon">Image<wbr>Tag</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.imagetaglist.html" class="tsd-kind-icon">Image<wbr>Tag<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.imagetagperformance.html" class="tsd-kind-icon">Image<wbr>Tag<wbr>Performance</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.imagetagprediction.html" class="tsd-kind-icon">Image<wbr>Tag<wbr>Prediction</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.imageurlcreatebatch.html" class="tsd-kind-icon">Image<wbr>Url<wbr>Create<wbr>Batch</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.iteration.html" class="tsd-kind-icon">Iteration</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.iterationperformance.html" class="tsd-kind-icon">Iteration<wbr>Performance</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.keypair.html" class="tsd-kind-icon">Key<wbr>Pair</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.perprojectquota.html" class="tsd-kind-icon">Per<wbr>Project<wbr>Quota</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.prediction.html" class="tsd-kind-icon">Prediction</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.predictionquery.html" class="tsd-kind-icon">Prediction<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.predictionquerytoken.html" class="tsd-kind-icon">Prediction<wbr>Query<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.predictiontag.html" class="tsd-kind-icon">Prediction<wbr>Tag</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.predictorconfig.html" class="tsd-kind-icon">Predictor<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.project.html" class="tsd-kind-icon">Project</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
-						<a href="_custom_vision_types_.tag.html" class="tsd-kind-icon">Tag</a>
+						<a href="_custom_vision_types_.projectsettings.html" class="tsd-kind-icon">Project<wbr>Settings</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+						<a href="_custom_vision_types_.quota.html" class="tsd-kind-icon">Quota</a>
 					</li>
 				</ul>
 			</nav>

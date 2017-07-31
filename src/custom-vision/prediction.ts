@@ -1,42 +1,49 @@
 import { genBaseURL } from 'src/utils'
 import { post } from 'superagent'
 import { region, service, version } from './constants'
-import { Config, ImageTagPrediction } from './types'
+import { Config, ImagePredictionResult } from './types'
 
-const baseURL = genBaseURL(region, service, version)
+const baseURL = genBaseURL(region, service, version) + '/Prediction'
 
 export const prediction = ({ predictionKey, projectID }: Config) => {
   /**
    * Generate an API URL given an endpoint and an optional iteration ID.
-   * @param endpoint - the API endpoint to connect to.
-   * @param iterationId - the training iteration to use for predictions.
+   * @param endpoint the API endpoint to connect to.
    * @returns the generated URL.
    */
-  const genURL = (endpoint: string, iterationId = '') =>
-    `${baseURL}/${projectID}/${endpoint}?iterationId=${iterationId}`
+  const genURL = (endpoint: string) => `${baseURL}/${projectID}/${endpoint}`
 
   /**
    * Predict an image given its URL.
-   * @param url the URL pointing to the image
+   * @param url the URL pointing to the image.
+   * @param iterationID the iteration to use for predictions.
    * @returns the results of the prediction.
    */
-  const predictURL = async (url: string): Promise<ImageTagPrediction[]> =>
+  const predictURL = async (
+    url: string,
+    iterationID = ''
+  ): Promise<ImagePredictionResult> =>
     (await post(genURL('url'))
       .set('Prediction-Key', predictionKey)
-      .set('Content-Type', 'application/json')
-      .send({ Url: url })).body.Predictions
+      .type('application/json')
+      .query({ iterationId: iterationID })
+      .send({ Url: url })).body
 
   /**
    * Predict an image given the image itself (file upload).
-   * @param {Blob} file the image file data. This function expects raw binary data,
-   * not a data URI.
+   * @param file the image file data. This function expects raw binary data, not a data URI.
+   * @param iterationID the iteration to use for predictions.
    * @returns the results of the prediction.
    */
-  const predictFile = async (file: Buffer): Promise<ImageTagPrediction[]> =>
+  const predictFile = async (
+    file: Buffer,
+    iterationID = ''
+  ): Promise<ImagePredictionResult> =>
     (await post(genURL('image'))
       .set('Prediction-Key', predictionKey)
-      .set('Content-Type', 'application/octet-stream')
-      .send(file)).body.Predictions
+      .type('application/octet-stream')
+      .query({ iterationId: iterationID })
+      .send(file)).body
 
   return { predictFile, predictURL }
 }

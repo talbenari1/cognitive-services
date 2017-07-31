@@ -1,9 +1,16 @@
 import { genBaseURL } from 'src/utils'
 import { get, post } from 'superagent'
 import { region, service, version } from './constants'
-import { Config, Domain, Project, Tag } from './types'
+import {
+  Config,
+  CreateImageSummary,
+  Domain,
+  ImageIdCreateBatch,
+  ImageTag,
+  Project
+} from './types'
 
-const baseURL = genBaseURL(region, service, version)
+const baseURL = genBaseURL(region, service, version) + '/Training'
 
 export const training = ({ projectID, trainingKey }: Config) => {
   /**
@@ -16,24 +23,51 @@ export const training = ({ projectID, trainingKey }: Config) => {
 
   /**
    * Add an image to the current project iteration.
-   * @param file - binary data for the image to be sent.
-   * @returns whether or not the operation was successful.
+   * @param file binary data for the image to be sent.
+   * @param tags the tag names to associate with the provided image.
+   * @returns a summary of the action.
    */
-  const addImage = async (file: Buffer): Promise<boolean> =>
+  const addImage = async (
+    file: Buffer,
+    tags: string[]
+  ): Promise<CreateImageSummary> =>
     (await post(genURL(`images/image`))
       .set('Training-Key', trainingKey)
-      .set('Content-Type', 'application/octet-stream')
+      .type('application/octet-stream')
+      .query({ tagIds: tags.join() })
       .send(file)).body
 
-  const addImageURLs = async (urls: string[], tags: string[]) =>
+  /**
+   * Add images to the current project iteration given their URLs.
+   * @param urls the urls that point to the images.
+   * @param tags the tag names to associate with all provided images.
+   * @returns a summary of the action.
+   */
+  const addImageURLs = async (
+    urls: string[],
+    tags: string[]
+  ): Promise<CreateImageSummary> =>
     (await post(genURL('images/url'))
       .set('Training-Key', trainingKey)
       .send({ Urls: urls, TagIds: tags })).body
 
   /**
+   * Add images to the current project iteration from past predictions.
+   * @param images the prediction image IDs to add.
+   * @param tags the tag IDs to add.
+   */
+  const addImagePredictions = async (
+    images: string[],
+    tags: string[]
+  ): Promise<CreateImageSummary> =>
+    (await post(genURL('images/predictions'))
+      .set('Training-Key', trainingKey)
+      .send({ Ids: images, TagIds: tags } as ImageIdCreateBatch)).body
+
+  /**
    * Get a list of the available domains and their IDs.
-   * @param force - whether or not to force the function to re-fetch the info, disabling memoization.
-   * @returns a list of objects containing the Name and Id of each domain.
+   * @param force whether or not to force the function to re-fetch the info, disabling memoization.
+   * @returns a list of available domains.
    */
   const getDomains = (() => {
     let domains: Promise<Domain[]>
@@ -51,7 +85,8 @@ export const training = ({ projectID, trainingKey }: Config) => {
 
   /**
    * Get a domain object given its name.
-   * @param name - the domain name.
+   * @param name the domain name.
+   * @returns the domain's details.
    */
   const findDomain = async (name: string): Promise<Domain> => {
     const domain = (await getDomains()).find((el: Domain) => el.Name === name)
@@ -61,10 +96,10 @@ export const training = ({ projectID, trainingKey }: Config) => {
 
   /**
    * Create a new project.
-   * @param name - the name of the project to create.
-   * @param description - the description of the project.
-   * @param domain - the name of the domain to use; defaults to 'General'.
-   * @returns an object containing all of the project's details.
+   * @param name the name of the project to create.
+   * @param description the description of the project.
+   * @param domain the name of the domain to use.
+   * @returns the created project's details.
    */
   const createProject = async (
     name: string,
@@ -73,23 +108,44 @@ export const training = ({ projectID, trainingKey }: Config) => {
   ): Promise<Project> =>
     (await post(baseURL + '/projects').set('Training-Key', trainingKey).query({
       description,
-      domainId: (await findDomain(domain)).Id || null,
+      domainId: (await findDomain(domain)).Id || '',
       name
     })).body
 
-  const createTag = async (name: string, description = ''): Promise<Tag> =>
+  /**
+   * Get all projects associated with an account.
+   * @returns the projects' details.
+   */
+  const getProjects = async (): Promise<Project[]> =>
+    (await get(baseURL + '/projects').set('Training-Key', trainingKey).send())
+      .body
+
+  /**
+   * Create a new tag.
+   * @param name the name of the tag to create.
+   * @param description the description of the tag.
+   * @returns the created tag's details.
+   */
+  const createTag = async (name: string, description = ''): Promise<ImageTag> =>
     (await post(genURL('tags'))
       .set('Training-Key', trainingKey)
       .query({ name, description })).body
 
-  const getTags = async () =>
-    (await get(genURL('tags')).set('Training-Key', trainingKey)).body.Tags
+  /**
+   * Get all tags associated with a project iteration.
+   * @returns the tags' details.
+   */
+  const getTags = async (iterationId?: string) =>
+    (await get(genURL('tags')).set('Training-Key', trainingKey)).body
 
   return {
     createProject,
 
+    findDomain,
+
     addImage,
     addImageURLs,
+    addImagePredictions,
 
     createTag,
     getTags

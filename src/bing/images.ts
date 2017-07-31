@@ -1,4 +1,4 @@
-import { genBaseURL } from 'src/utils'
+import { genBaseURL } from '../utils'
 import { get } from 'superagent'
 import { service, version } from './constants'
 import { Config, Market } from './types'

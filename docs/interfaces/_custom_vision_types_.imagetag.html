@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Domain | cognitive-services</title>
+	<title>ImageTag | cognitive-services</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,10 +59,10 @@
 					<a href="../modules/_custom_vision_types_.html">&quot;custom-vision/types&quot;</a>
 				</li>
 				<li>
-					<a href="_custom_vision_types_.domain.html">Domain</a>
+					<a href="_custom_vision_types_.imagetag.html">ImageTag</a>
 				</li>
 			</ul>
-			<h1>Interface Domain</h1>
+			<h1>Interface ImageTag</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Domain</span>
+						<span class="target">ImageTag</span>
 					</li>
 				</ul>
 			</section>
@@ -84,8 +84,10 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_custom_vision_types_.domain.html#id" class="tsd-kind-icon">Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_custom_vision_types_.domain.html#name" class="tsd-kind-icon">Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_custom_vision_types_.imagetag.html#description" class="tsd-kind-icon">Description</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_custom_vision_types_.imagetag.html#id" class="tsd-kind-icon">Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_custom_vision_types_.imagetag.html#imagecount" class="tsd-kind-icon">Image<wbr>Count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_custom_vision_types_.imagetag.html#name" class="tsd-kind-icon">Name</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,12 +96,32 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="description" class="tsd-anchor"></a>
+					<h3>Description</h3>
+					<div class="tsd-signature tsd-kind-icon">Description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L88">custom-vision/types.ts:88</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="id" class="tsd-anchor"></a>
 					<h3>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L51">custom-vision/types.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L86">custom-vision/types.ts:86</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="imagecount" class="tsd-anchor"></a>
+					<h3>Image<wbr>Count</h3>
+					<div class="tsd-signature tsd-kind-icon">Image<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L89">custom-vision/types.ts:89</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -109,7 +131,7 @@
 					<div class="tsd-signature tsd-kind-icon">Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L52">custom-vision/types.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L87">custom-vision/types.ts:87</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -185,21 +207,9 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.createimagesummary.html" class="tsd-kind-icon">Create<wbr>Image<wbr>Summary</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.domain.html" class="tsd-kind-icon">Domain</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="_custom_vision_types_.domain.html#id" class="tsd-kind-icon">Id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="_custom_vision_types_.domain.html#name" class="tsd-kind-icon">Name</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.image.html" class="tsd-kind-icon">Image</a>
 					</li>
@@ -212,9 +222,27 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.imagepredictionresult.html" class="tsd-kind-icon">Image<wbr>Prediction<wbr>Result</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.imagetag.html" class="tsd-kind-icon">Image<wbr>Tag</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="_custom_vision_types_.imagetag.html#description" class="tsd-kind-icon">Description</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="_custom_vision_types_.imagetag.html#id" class="tsd-kind-icon">Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="_custom_vision_types_.imagetag.html#imagecount" class="tsd-kind-icon">Image<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="_custom_vision_types_.imagetag.html#name" class="tsd-kind-icon">Name</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.imagetaglist.html" class="tsd-kind-icon">Image<wbr>Tag<wbr>List</a>
 					</li>

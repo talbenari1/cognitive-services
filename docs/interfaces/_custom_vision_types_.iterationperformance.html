@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Domain | cognitive-services</title>
+	<title>IterationPerformance | cognitive-services</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,10 +59,10 @@
 					<a href="../modules/_custom_vision_types_.html">&quot;custom-vision/types&quot;</a>
 				</li>
 				<li>
-					<a href="_custom_vision_types_.domain.html">Domain</a>
+					<a href="_custom_vision_types_.iterationperformance.html">IterationPerformance</a>
 				</li>
 			</ul>
-			<h1>Interface Domain</h1>
+			<h1>Interface IterationPerformance</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Domain</span>
+						<span class="target">IterationPerformance</span>
 					</li>
 				</ul>
 			</section>
@@ -84,8 +84,11 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_custom_vision_types_.domain.html#id" class="tsd-kind-icon">Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_custom_vision_types_.domain.html#name" class="tsd-kind-icon">Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_custom_vision_types_.iterationperformance.html#pertagperformance" class="tsd-kind-icon">Per<wbr>Tag<wbr>Performance</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_custom_vision_types_.iterationperformance.html#precision" class="tsd-kind-icon">Precision</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_custom_vision_types_.iterationperformance.html#precisionstddeviation" class="tsd-kind-icon">Precision<wbr>Std<wbr>Deviation</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_custom_vision_types_.iterationperformance.html#recall" class="tsd-kind-icon">Recall</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_custom_vision_types_.iterationperformance.html#recallstddeviation" class="tsd-kind-icon">Recall<wbr>Std<wbr>Deviation</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,22 +97,52 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="id" class="tsd-anchor"></a>
-					<h3>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="pertagperformance" class="tsd-anchor"></a>
+					<h3>Per<wbr>Tag<wbr>Performance</h3>
+					<div class="tsd-signature tsd-kind-icon">Per<wbr>Tag<wbr>Performance<span class="tsd-signature-symbol">:</span> <a href="_custom_vision_types_.imagetagperformance.html" class="tsd-signature-type">ImageTagPerformance</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L51">custom-vision/types.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L129">custom-vision/types.ts:129</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>Name</h3>
-					<div class="tsd-signature tsd-kind-icon">Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="precision" class="tsd-anchor"></a>
+					<h3>Precision</h3>
+					<div class="tsd-signature tsd-kind-icon">Precision<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L52">custom-vision/types.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L130">custom-vision/types.ts:130</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="precisionstddeviation" class="tsd-anchor"></a>
+					<h3>Precision<wbr>Std<wbr>Deviation</h3>
+					<div class="tsd-signature tsd-kind-icon">Precision<wbr>Std<wbr>Deviation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L131">custom-vision/types.ts:131</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="recall" class="tsd-anchor"></a>
+					<h3>Recall</h3>
+					<div class="tsd-signature tsd-kind-icon">Recall<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L132">custom-vision/types.ts:132</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="recallstddeviation" class="tsd-anchor"></a>
+					<h3>Recall<wbr>Std<wbr>Deviation</h3>
+					<div class="tsd-signature tsd-kind-icon">Recall<wbr>Std<wbr>Deviation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/talbenari1/cognitive-services/blob/c555036/src/custom-vision/types.ts#L133">custom-vision/types.ts:133</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -185,21 +218,9 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.createimagesummary.html" class="tsd-kind-icon">Create<wbr>Image<wbr>Summary</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.domain.html" class="tsd-kind-icon">Domain</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="_custom_vision_types_.domain.html#id" class="tsd-kind-icon">Id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="_custom_vision_types_.domain.html#name" class="tsd-kind-icon">Name</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.image.html" class="tsd-kind-icon">Image</a>
 					</li>
@@ -230,9 +251,30 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.iteration.html" class="tsd-kind-icon">Iteration</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.iterationperformance.html" class="tsd-kind-icon">Iteration<wbr>Performance</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="_custom_vision_types_.iterationperformance.html#pertagperformance" class="tsd-kind-icon">Per<wbr>Tag<wbr>Performance</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="_custom_vision_types_.iterationperformance.html#precision" class="tsd-kind-icon">Precision</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="_custom_vision_types_.iterationperformance.html#precisionstddeviation" class="tsd-kind-icon">Precision<wbr>Std<wbr>Deviation</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="_custom_vision_types_.iterationperformance.html#recall" class="tsd-kind-icon">Recall</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="_custom_vision_types_.iterationperformance.html#recallstddeviation" class="tsd-kind-icon">Recall<wbr>Std<wbr>Deviation</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
 						<a href="_custom_vision_types_.keypair.html" class="tsd-kind-icon">Key<wbr>Pair</a>
 					</li>
