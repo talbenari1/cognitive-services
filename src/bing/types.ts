@@ -44,3 +44,26 @@ export type Market =
   | 'zh-CN'
   | 'zh-HK'
   | 'zh-TW'
+
+export interface ImageResults {
+  name: string
+  webSearchUrl: string
+  webSearchUrlPingSuffix: string
+  thumbnailUrl: string
+  datePublished: string
+  contentUrl: string
+  hostPageUrl: string
+  hostPageUrlPingSuffix: string
+  contentSize: string
+  encodingFormat: string
+  width: number
+  height: number
+  thumbnail: { width: number; height: number }
+  imageInsightsToken: string
+  insightsSourcesSummary: {
+    shoppingSourcesCount: number
+    recipeSourcesCount: number
+  }
+  imageId: string
+  accentColor: string
+}

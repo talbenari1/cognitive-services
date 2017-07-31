@@ -11,17 +11,17 @@ export class CustomVision {
   /** The base URL for all endpoints. */
   static baseURL = genBaseURL(region, service, version) + '/Training'
 
-  /** The training key associated with the account. */
+  /** The primary training key associated with the account. */
   private trainingKey: string
 
-  /** The prediction key associated with the account. */
-  private predictionKey: string | undefined
+  /** The primary prediction key associated with the account. */
+  private predictionKey?: string
 
   /** The active project. */
-  private predictor: CustomVisionPredictor | undefined
+  private predictor?: CustomVisionPredictor
 
   /** The account information */
-  private accountInfo: types.Account | undefined
+  private accountInfo?: types.Account
 
   constructor({ trainingKey, predictionKey, projectID }: types.Config) {
     this.trainingKey = trainingKey

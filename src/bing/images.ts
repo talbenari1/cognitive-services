@@ -1,12 +1,20 @@
 import { get } from 'superagent'
 import { genBaseURL } from '../utils'
 import { service, version } from './constants'
-import { Config, Market } from './types'
+import { Config, ImageResults, Market } from './types'
 
-const baseURL = genBaseURL(null, service, version)
-const genURL = (endpoint: string) => baseURL + '/images/' + endpoint
+/** The image search handler. */
+export class ImageSearch {
+  /** The base URL for all endpoints */
+  static baseURL = genBaseURL(null, service, version)
 
-export const images = ({ APIKey }: Config) => {
+  /** The primary API key associated with the account. */
+  private APIKey: string
+
+  constructor({ APIKey }: Config) {
+    this.APIKey = APIKey
+  }
+
   /**
    * Search the web for images.
    * @param query the search query.
@@ -16,16 +24,25 @@ export const images = ({ APIKey }: Config) => {
    * @param safeSearch whether or not to filter the results for adult content.
    * @returns the search results.
    */
-  const search = async (
+  async search(
     query: string,
     count = 10,
     offset = 0,
     market: Market = 'en-US',
     safeSearch = true
-  ) =>
-    (await get(genURL('search'))
-      .set('Ocp-Apim-Subscription-Key', APIKey)
+  ): Promise<ImageResults> {
+    return (await get(this.genURL('search'))
+      .set('Ocp-Apim-Subscription-Key', this.APIKey)
       .query({ q: query, count, offset, mkt: market, safeSearch })).body
+  }
 
-  return { search }
+  /**
+   * Generate an API URL given an endpoint.
+   * 
+   * @param endpoint 
+   * @returns the generated URL.
+   */
+  private genURL(endpoint: string) {
+    return ImageSearch.baseURL + '/images/' + endpoint
+  }
 }

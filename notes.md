@@ -6,6 +6,7 @@
 - Endpoint `/Prediction/{projectId}/url` has an issue in the description field for the `imageUrl`; the reference to `Iris.Web.Api.Models.ImageUrl` doesn't show up correctly.
 - All properties are upper-camel-case which differs from other cognitive service APIs.
 - It would be helpful if errors were better documented.
+- Missing from [https://azure.microsoft.com/en-us/try/cognitive-services/](the 'try' page).
 
 ## Face API
 - Endpoint `/detect`: the provided example JSON has a typo (an extra closing brace in `faceAttributes.facialHair`), causing the entire object to be invalid.
