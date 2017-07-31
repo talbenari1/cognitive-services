@@ -1,12 +1,10 @@
 import { post } from 'superagent'
 import { genBaseURL } from '../utils'
 import { region, service, version } from './constants'
-import { ImagePredictionResult, PredictorConfig } from './types'
+import { Binary, ImagePredictionResult, PredictorConfig } from './types'
 import * as types from './types'
 
 export { types }
-
-export type Binary = Blob | Buffer
 
 /** The Custom Vision API prediction handler. */
 export class CustomVisionPredictor {

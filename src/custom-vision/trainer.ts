@@ -3,6 +3,7 @@ import { genBaseURL } from '../utils'
 import { region, service, version } from './constants'
 import * as types from './types'
 import {
+  Binary,
   CreateImageSummary,
   ImageIdCreateBatch,
   ImageTag,
@@ -11,8 +12,6 @@ import {
 } from './types'
 
 export { types }
-
-export type Binary = Blob | Buffer
 
 /** The Custom Vision API training handler. */
 export class CustomVisionTrainer {

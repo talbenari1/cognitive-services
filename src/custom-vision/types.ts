@@ -1,3 +1,8 @@
+export * from './predictor'
+export * from './trainer'
+
+export type Binary = Blob | Buffer
+
 export interface PredictorConfig {
   predictionKey: string
   projectID: string
