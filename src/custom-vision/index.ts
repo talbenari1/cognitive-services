@@ -13,6 +13,9 @@ export class CustomVision {
   /** The base URL for all endpoints. */
   static baseURL = genBaseURL(region, service, version) + '/Training'
 
+  /** The active project's training handler. */
+  trainer?: CustomVisionTrainer
+  
   /** The primary training key associated with the account. */
   private trainingKey: string
 
@@ -21,9 +24,6 @@ export class CustomVision {
 
   /** The active project's prediction handler. */
   private predictor?: CustomVisionPredictor
-
-  /** The active project's training handler. */
-  private trainer?: CustomVisionTrainer
 
   /** The account information. */
   private accountInfo?: Account
