@@ -1,6 +1,9 @@
 import { types as bing } from './bing'
 import { types as customVision } from './custom-vision'
 
+export * from './custom-vision/types'
+export * from './bing/types'
+
 export type Region =
   // United States
   | 'eastus'
@@ -25,5 +28,3 @@ export interface Config {
   bing?: bing.Config
   customVision?: customVision.Config
 }
-
-export { bing, customVision }
