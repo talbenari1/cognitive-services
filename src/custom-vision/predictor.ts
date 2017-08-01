@@ -39,8 +39,8 @@ export class CustomVisionPredictor {
     const binary = image.constructor !== String
 
     // create the correct endpoint
-    let endpoint = binary ? 'image' : 'url'
-    if (save) endpoint = 'inline/' + endpoint
+    let endpoint = binary ? '/image' : '/url'
+    if (save) endpoint = '/inline' + endpoint
 
     // build the request
     let req = post(CustomVisionPredictor.baseURL + endpoint).set(
