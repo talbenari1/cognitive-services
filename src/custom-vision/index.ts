@@ -15,15 +15,15 @@ export class CustomVision {
 
   /** The active project's training handler. */
   trainer?: CustomVisionTrainer
-  
+
+  /** The active project's prediction handler. */
+  predictor?: CustomVisionPredictor
+
   /** The primary training key associated with the account. */
   private trainingKey: string
 
   /** The primary prediction key associated with the account. */
   private predictionKey?: string
-
-  /** The active project's prediction handler. */
-  private predictor?: CustomVisionPredictor
 
   /** The account information. */
   private accountInfo?: Account
@@ -130,15 +130,6 @@ export class CustomVision {
       'Training-Key',
       this.trainingKey
     )).body
-  }
-
-  /** The predict method, pulled from the predictor for easier access. */
-  get predict() {
-    if (!this.predictor) {
-      throw new Error('No project ID provided')
-    }
-
-    return this.predictor.predict
   }
 
   /**

@@ -58,7 +58,7 @@ export class CustomVisionPredictor {
    * @param endpoint the API endpoint to connect to. 
    * @returns the generated URL. 
    */
-  private genURL(endpoint: string) {
+  genURL(endpoint: string) {
     return `${CustomVisionPredictor.baseURL}/${this.projectID}/${endpoint}`
   }
 }
