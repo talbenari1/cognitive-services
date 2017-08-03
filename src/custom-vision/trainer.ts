@@ -132,7 +132,10 @@ export class CustomVisionTrainer {
   private isBinaryArray(arg: any): arg is Binary[] {
     return (
       arg instanceof Array &&
-      (typeof Blob !== 'undefined' && arg[0].constructor === Blob || typeof Buffer !== 'undefined' && arg[0].constructor === Buffer)
+      // tslint:disable strict-type-predicates
+      ((typeof Blob !== 'undefined' && arg[0].constructor === Blob) ||
+        (typeof Buffer !== 'undefined' && arg[0].constructor === Buffer))
+      // tslint:enable strict-type-predicates
     )
   }
 }
