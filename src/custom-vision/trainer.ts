@@ -7,6 +7,7 @@ import {
   CreateImageSummary,
   ImageIdCreateBatch,
   ImageTag,
+  ImageTagList,
   ImageUrlCreateBatch,
   TrainerConfig
 } from './types'
@@ -48,7 +49,7 @@ export class CustomVisionTrainer {
 
     // build the request
     let req = post(this.genURL('images/' + endpoint)).set(
-      'Training-Key',
+      'Training-key',
       this.trainingKey
     )
 
@@ -81,7 +82,7 @@ export class CustomVisionTrainer {
   ): Promise<CreateImageSummary> {
     const createBatch: ImageIdCreateBatch = { Ids: images, TagIds: tags }
     return (await post(this.genURL('images/predictions'))
-      .set('Training-Key', this.trainingKey)
+      .set('Training-key', this.trainingKey)
       .send(createBatch)).body
   }
 
@@ -94,7 +95,7 @@ export class CustomVisionTrainer {
    */
   async createTag(name: string, description = ''): Promise<ImageTag> {
     return (await post(this.genURL('tags'))
-      .set('Training-Key', this.trainingKey)
+      .set('Training-key', this.trainingKey)
       .query({ name, description })).body
   }
 
@@ -104,9 +105,9 @@ export class CustomVisionTrainer {
    * @param iterationId the ID of the iteration to use.
    * @returns the tags' details.
    */
-  async getTags(iterationId?: string) {
+  async getTags(iterationId?: string): Promise<ImageTagList> {
     return (await get(this.genURL('tags')).set(
-      'Training-Key',
+      'Training-key',
       this.trainingKey
     )).body
   }

@@ -44,7 +44,7 @@ export class CustomVisionPredictor {
 
     // build the request
     let req = post(this.genURL(endpoint)).set(
-      'Prediction-Key',
+      'Prediction-key',
       this.predictionKey
     )
     if (iterationID) req = req.query({ iterationId: iterationID })
