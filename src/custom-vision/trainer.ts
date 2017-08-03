@@ -132,7 +132,7 @@ export class CustomVisionTrainer {
   private isBinaryArray(arg: any): arg is Binary[] {
     return (
       arg instanceof Array &&
-      (arg[0].constructor === Blob || arg[0].constructor === Buffer)
+      (typeof Blob !== 'undefined' && arg[0].constructor === Blob || typeof Buffer !== 'undefined' && arg[0].constructor === Buffer)
     )
   }
 }
