@@ -80,9 +80,7 @@ export class CustomVision {
    * @returns the domain's details.
    */
   async findDomain(name: string): Promise<Domain> {
-    const domain = (await this.getDomains()).find(
-      (el: Domain) => el.Name === name
-    )
+    const domain = (await this.getDomains()).find(el => el.Name === name)
     if (!domain) throw new Error(`Domain not found: ${name}`)
     return domain
   }
