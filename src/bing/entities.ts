@@ -1,8 +1,8 @@
 import { get } from 'superagent'
 import { SafeSearch } from '../types'
-import { Config, Entity, SearchResponse } from './types'
-import { service, version } from './constants'
 import { genBaseURL } from '../utils'
+import { service, version } from './constants'
+import { Config, Entity, SearchResponse } from './types'
 
 /** The entity search handler. */
 export class EntitySearch {

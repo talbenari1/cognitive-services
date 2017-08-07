@@ -1,3 +1,4 @@
+import { EntitySearch } from './entities'
 import { ImageSearch } from './images'
 import * as types from './types'
 import { Config } from './types'
@@ -9,6 +10,9 @@ export class Bing {
   /** The rate limit (Hz) across all Bing Search APIs on a free account. */
   static BING_LIMIT = 7
 
+  /** The entity search handler for this account. */
+  public entities: EntitySearch
+
   /** The image search handler for this account. */
   public images: ImageSearch
 
@@ -17,6 +21,7 @@ export class Bing {
 
   constructor({ APIKey }: Config) {
     this.APIKey = APIKey
+    this.entities = new EntitySearch({ APIKey })
     this.images = new ImageSearch({ APIKey })
   }
 }
