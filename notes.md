@@ -1,5 +1,10 @@
 # Notes
 
+## Bing Entity Search API
+- In the [LinkAttribution section of the 'Reference' page](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-entities-api-v7-reference#linkattribution), the description for `targetPropertyName` has an issue in the description field (\*cough\*`<provider />`\*cough\*).
+- ['Reference' page](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-entities-api-v7-reference) includes critical information not present in the API reference (e.g. query parameter details).
+- In the [Place section of the 'Reference page](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-entities-api-v7-reference#place), there is an unnecessary `<li>` tag in the `_type` field description, and an unnecessary `<br>` in the `LocalBusiness` list item.
+
 ## Bing Image Search API
 - 'Reference' page includes critical information not present in the API reference (e.g. query parameter details).
 

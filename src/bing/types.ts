@@ -2,6 +2,82 @@ export interface Config {
   APIKey: string
 }
 
+export type Attribution =
+  | LicenseAttribution
+  | LinkAttribution
+  | MediaAttribution
+  | TextAttribution
+
+export interface Entity {
+  bingId: string
+  contractualRules: Attribution[]
+}
+
+export interface EntityAnswer {
+  queryScenario: 'DominantEntity' | 'DisambiguationItem'
+  value: Entity[]
+}
+
+export type EntityEducationType =
+  | 'CollegeOrUniversity'
+  | 'School'
+  | 'Speciality'
+
+export type EntityEventType = 'Event'
+
+export type EntityMediaType =
+  | 'Book'
+  | 'Movie'
+  | 'TelevisionSeason'
+  | 'TelevisionShow'
+  | 'VideoGame'
+
+export type EntityOtherType =
+  | 'Animal'
+  | 'Car'
+  | 'Drug'
+  | 'Food'
+  | 'Product'
+  | 'SportsTeam'
+
+export type EntityPersonType =
+  | 'Attraction'
+  | 'City'
+  | 'Continent'
+  | 'Country'
+  | 'Hotel'
+  | 'House'
+  | 'LocalBusiness'
+  | 'Locality'
+  | 'MinorRegion'
+  | 'Neighborhood'
+  | 'Other'
+  | 'PointOfInterest'
+  | 'PostalCode'
+  | 'RadioStation'
+  | 'Region'
+  | 'Restaurant'
+  | 'State'
+  | 'StreetAddress'
+  | 'SubRegion'
+  | 'TouristAttraction'
+  | 'Travel'
+
+export interface EntityPresentationInfo<T> {
+  entityScenario: T
+  entityTypeDisplayHint: string
+  entityTypeHint: EntityType | EntityType[]
+}
+
+export type EntityProfessionType = 'Actor' | 'Artist' | 'Attorney'
+
+export type EntityType =
+  | 'Generic'
+  | 'Person'
+  | 'Place'
+  | 'Media'
+  | 'Organization'
+
 export interface ImageResults {
   name: string
   webSearchUrl: string
@@ -23,6 +99,38 @@ export interface ImageResults {
   }
   imageId: string
   accentColor: string
+}
+
+export interface License {
+  name: string
+  url: string
+}
+
+export interface LicenseAttribution {
+  _type: 'LicenseAttribution'
+  license: License
+  licenseNotice: string
+  mustBeCloseToContent?: boolean
+  targetPropertyName: string
+}
+
+export interface Link {
+  _type: 'Link'
+  text: string
+  url: string
+}
+
+export interface LinkAttribution {
+  _type: 'LinkAttribution'
+  mustBeCloseToContent?: boolean
+  targetPropertyName: string
+  text: string
+  url: string
+}
+
+export interface LocalEntityAnswer {
+  _type: 'LocalEntityAnswer'
+  value: Place[]
 }
 
 export type Market =
@@ -68,4 +176,50 @@ export type Market =
   | 'zh-HK'
   | 'zh-TW'
 
+export interface MediaAttribution {
+  _type: 'MediaAttribution'
+  mustBeCloseToContent?: boolean
+  targetPropertyName: string
+  url: string
+}
+
+export interface Place {
+  _type: 'Hotel' | 'LocalBusiness' | 'Restaurant'
+  address: PostalAddress
+  entityPresentationInfo: EntityPresentationInfo<'ListItem'>
+  name: string
+  telephone: string
+  url: string
+  webSearchUrl: string
+}
+
+export interface PostalAddress {
+  addressCountry: string
+  addressLocality: string
+  addressRegion: string
+  neighborhood: string
+  postalCode: string
+  text: string
+}
+
+export interface QueryContext {
+  adultIntent: boolean
+  alterationOverrideQuery: string
+  alteredQuery: string
+  askUserForLocation: boolean
+  originalQuery: string
+}
+
 export type SafeSearch = 'Strict' | 'Moderate' | 'Off'
+
+export interface SearchResponse {
+  _type: 'SearchResponse'
+  entities: EntityAnswer
+  places: LocalEntityAnswer
+  queryContext: QueryContext
+}
+
+export interface TextAttribution {
+  _type: 'TextAttribution'
+  text: string
+}
