@@ -24,14 +24,14 @@ export class EntitySearch {
    * @param safeSearch whether or not to filter the results for adult content.
    * @returns the search results.
    */
-  async entities(
+  async search(
     query: string,
     count = 10,
     offset = 0,
     safeSearch: SafeSearch = 'Strict'
   ): Promise<SearchResponse> {
     return (await get(EntitySearch.baseURL + '/entities')
-      .set('Ocp-Acim-Subscription-Key', this.APIKey)
+      .set('Ocp-Apim-Subscription-Key', this.APIKey)
       .query({ q: query, count, offset, safeSearch })).body
   }
 }
