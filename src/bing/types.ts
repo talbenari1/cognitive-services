@@ -11,6 +11,11 @@ export type Attribution =
 export interface Entity {
   bingId: string
   contractualRules: Attribution[]
+  description: string
+  entityPresentationInfo: EntityPresentationInfo
+  image: Image
+  name: string
+  webSearchUrl: string
 }
 
 export interface EntityAnswer {
@@ -40,7 +45,7 @@ export type EntityOtherType =
   | 'Product'
   | 'SportsTeam'
 
-export type EntityPersonType =
+export type EntityPlaceType =
   | 'Attraction'
   | 'City'
   | 'Continent'
@@ -63,8 +68,8 @@ export type EntityPersonType =
   | 'TouristAttraction'
   | 'Travel'
 
-export interface EntityPresentationInfo<T> {
-  entityScenario: T
+export interface EntityPresentationInfo {
+  entityScenario: string
   entityTypeDisplayHint: string
   entityTypeHint: EntityType | EntityType[]
 }
@@ -78,6 +83,15 @@ export type EntityType =
   | 'Media'
   | 'Organization'
 
+export interface Image {
+  height: number
+  hostPageUrl: string
+  name: string
+  provider: [Organization]
+  thumbnailUrl: string
+  width: number
+}
+  
 export interface ImageResults {
   name: string
   webSearchUrl: string
@@ -183,10 +197,15 @@ export interface MediaAttribution {
   url: string
 }
 
+export interface Organization {
+  name: string
+  url: string
+}
+
 export interface Place {
-  _type: 'Hotel' | 'LocalBusiness' | 'Restaurant'
+  _type: EntityPlaceType
   address: PostalAddress
-  entityPresentationInfo: EntityPresentationInfo<'ListItem'>
+  entityPresentationInfo: EntityPresentationInfo
   name: string
   telephone: string
   url: string

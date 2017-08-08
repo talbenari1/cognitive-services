@@ -40,7 +40,7 @@ export interface ApiKeys {
 
 export interface CreateImageResult {
   SourceUrl: string
-  Image: Image
+  Image: CreatedImage
   Status:
     | 'OK'
     | 'OKDuplicate'
@@ -62,7 +62,7 @@ export interface Domain {
   Name: string
 }
 
-export interface Image {
+export interface CreatedImage {
   Id: string
   Created: string
   Width: number
