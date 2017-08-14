@@ -1,7 +1,7 @@
 import { get } from 'superagent'
 import { genBaseURL } from '../utils'
 import { service, version } from './constants'
-import { Config, ImageResults, Market, SafeSearch } from './types'
+import { Config, Images, Market, SafeSearch } from './types'
 
 /** The image search handler. */
 export class ImageSearch {
@@ -30,7 +30,7 @@ export class ImageSearch {
     offset = 0,
     market: Market = 'en-US',
     safeSearch: SafeSearch = 'Strict'
-  ): Promise<ImageResults> {
+  ): Promise<Images> {
     return (await get(this.genURL('search'))
       .set('Ocp-Apim-Subscription-Key', this.APIKey)
       .query({ q: query, count, offset, mkt: market, safeSearch })).body
