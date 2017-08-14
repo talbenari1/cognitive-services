@@ -13,7 +13,7 @@ export interface Entity {
   contractualRules: Attribution[]
   description: string
   entityPresentationInfo: EntityPresentationInfo
-  image: Image
+  image: EntityImage
   name: string
   webSearchUrl: string
 }
@@ -24,11 +24,20 @@ export interface EntityAnswer {
 }
 
 export type EntityEducationType =
-  | 'CollegeOrUniversity'
-  | 'School'
-  | 'Speciality'
+| 'CollegeOrUniversity'
+| 'School'
+| 'Speciality'
 
 export type EntityEventType = 'Event'
+
+export interface EntityImage {
+  height: number
+  hostPageUrl: string
+  name: string
+  provider: [Organization]
+  thumbnailUrl: string
+  width: number
+}
 
 export type EntityMediaType =
   | 'Book'
@@ -84,12 +93,42 @@ export type EntityType =
   | 'Organization'
 
 export interface Image {
+  accentColor: string
+  contentSize: string
+  contentUrl: string
+  datePublished: string
+  encodingFormat: string
   height: number
-  hostPageUrl: string
+  hostPageDisplayUrl: string
+  hostPageUrlPingSuffix: string
+  id: string
+  imageId: string
+  imageInsightsToken: string
+  insightsSourcesSummary: InsightSourcesSummary
   name: string
-  provider: [Organization]
+  thumbnail: MediaSize
   thumbnailUrl: string
-  width: number
+  webSearchUrl: string
+  webSearchUrlPingSuffix: string
+  width: string
+}
+
+/* The top-level object that the response includes when an image request succeeds. */
+export interface Images {
+  _type: string
+  displayRecipeSourcesBadges: boolean
+  displayShoppingSourcesBadges: boolean
+  id: string
+  isFamilyFriendly: boolean
+  nextOffsetAddCount: number
+  instrumentation: Instrumentation
+  pivotSuggestions: Pivot
+  queryExpansions: Query[]
+  readLink: string
+  totalEstimatedMatches: number
+  value: Image[]
+  webSearchUrl: string
+  webSearchUrlPingSuffix: string
 }
   
 export interface ImageResults {
@@ -113,6 +152,16 @@ export interface ImageResults {
   }
   imageId: string
   accentColor: string
+}
+
+export interface InsightSourcesSummary {
+  recipeSourcesCount: number
+  shoppingSourcesCount: number
+}
+
+export interface Instrumentation {
+  pageLoadPingUrl: string
+  pingUrlBase: string
 }
 
 export interface License {
@@ -197,9 +246,19 @@ export interface MediaAttribution {
   url: string
 }
 
+export interface MediaSize {
+  height: number
+  width: number
+}
+
 export interface Organization {
   name: string
   url: string
+}
+
+export interface Pivot {
+  pivot: string
+  suggestions: Query[]
 }
 
 export interface Place {
@@ -220,6 +279,8 @@ export interface PostalAddress {
   postalCode: string
   text: string
 }
+
+export type Query = string
 
 export interface QueryContext {
   adultIntent: boolean
