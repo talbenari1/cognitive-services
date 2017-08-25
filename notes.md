@@ -13,6 +13,7 @@
 - Endpoint `/Training/projects` has a typo in the `description` field (of the of the).
 - Endpoint `/Prediction/{projectId}/url` has an issue in the description field for the `imageUrl`; the reference to `{Iris.Web.Api.Models.ImageUrl}` doesn't show up correctly.
 - Several tag-related endpoints reference `{take}` and `{skip}` which don't show up correctly.
+- Endpoint `/Training/domains` has a typo in the `description` field (avaiable).
 
 ### Nit-picking
 - All properties in request & response bodies are upper-camel-case which differs from other cognitive service APIs.
