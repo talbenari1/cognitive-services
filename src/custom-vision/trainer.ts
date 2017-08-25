@@ -19,11 +19,11 @@ export class CustomVisionTrainer {
   /** The base URL for all prediction endpoints. */
   static baseURL = genBaseURL(region, service, version) + '/Training'
 
+  /** The project's ID */
+  readonly projectID: string
+
   /** The training key for the project */
   private trainingKey: string
-
-  /** The project's ID */
-  private projectID: string
 
   constructor({ trainingKey, projectID }: TrainerConfig) {
     this.trainingKey = trainingKey

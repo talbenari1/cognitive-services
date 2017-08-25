@@ -4,7 +4,7 @@ import { region, service, version } from './constants'
 import { CustomVisionPredictor } from './predictor'
 import { CustomVisionTrainer } from './trainer'
 import * as types from './types'
-import { Account, Config, Domain, Project } from './types'
+import { Account, Config, Domain, PredictorConfig, Project } from './types'
 
 export { types }
 
@@ -13,11 +13,14 @@ export class CustomVision {
   /** The base URL for all endpoints. */
   static baseURL = genBaseURL(region, service, version) + '/Training'
 
+  /** The active project's ID */
+  readonly projectID?: string
+
   /** The active project's training handler. */
-  trainer?: CustomVisionTrainer
+  private _trainer?: CustomVisionTrainer
 
   /** The active project's prediction handler. */
-  predictor?: CustomVisionPredictor
+  private _predictor?: CustomVisionPredictor
 
   /** The primary training key associated with the account. */
   private trainingKey: string
@@ -42,9 +45,16 @@ export class CustomVision {
           const info = await this.getAccountInfo()
           predictionKey = info.Keys.PredictionKeys.PrimaryKey
         }
-        this.predictor = new CustomVisionPredictor({ predictionKey, projectID })
       })()
     }
+  }
+
+  get trainer() {
+    if (!this._trainer) {
+      throw new Error('')
+    }
+
+    return this._trainer
   }
 
   /**
@@ -119,6 +129,16 @@ export class CustomVision {
   }
 
   /**
+   * Retrieve and save the prediction key for the account.
+   */
+  async retrievePredictionKey(): Promise<void> {
+    if (!this.predictionKey) {
+      this.predictionKey = (await this.getAccountInfo()).Keys.PredictionKeys.PrimaryKey
+      if (this.projectID) this.setProject(this.projectID)
+    }
+  }
+
+  /**
    * Get all projects associated with the account.
    * 
    * @returns the projects' details.
@@ -135,10 +155,45 @@ export class CustomVision {
    * 
    * @param projectID the ID of the project to make active.
    */
-  setProject(projectID: string) {
-    this.trainer = new CustomVisionTrainer({
-      trainingKey: this.trainingKey,
-      projectID
-    })
+  setProject(projectID: string): void {
+    if (!(this._trainer && this._trainer.projectID === projectID)) {
+      this._trainer = new CustomVisionTrainer({
+        trainingKey: this.trainingKey,
+        projectID
+      })
+    }
+    if (
+      this.predictionKey &&
+      !(this._predictor && this._predictor.projectID === projectID)
+    ) {
+      this._predictor = new CustomVisionPredictor({
+        predictionKey: this.predictionKey,
+        projectID
+      })
+    }
   }
 }
+
+/**
+ * Create a Custom Vision handler.
+ * @param config the configuration object.
+ * @returns the created handler.
+ */
+function factory(config: PredictorConfig): CustomVisionPredictor
+function factory(config: Config): CustomVision
+function factory(config: PredictorConfig | Config) {
+  return isFullConfig(config)
+    ? new CustomVision(config)
+    : new CustomVisionPredictor(config)
+}
+
+/**
+ * Determine if the config is a full config or only for predictions.
+ * @param config the config object to test.
+ * @returns a type predicate guaranteeing the config's type.
+ */
+function isFullConfig(config: any): config is Config {
+  return config.hasOwnProperty('trainingKey')
+}
+
+export default factory

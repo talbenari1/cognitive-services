@@ -11,11 +11,11 @@ export class CustomVisionPredictor {
   /** The base URL for all prediction endpoints. */
   static baseURL = genBaseURL(region, service, version) + '/Prediction'
 
+  /** The project's ID */
+  readonly projectID: string
+
   /** The prediction key for the project */
   private predictionKey: string
-
-  /** The project's ID */
-  private projectID: string
 
   constructor({ predictionKey, projectID }: PredictorConfig) {
     this.predictionKey = predictionKey
