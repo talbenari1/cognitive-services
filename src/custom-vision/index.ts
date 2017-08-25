@@ -22,11 +22,11 @@ export class CustomVision {
   /** The active project's prediction handler. */
   private _predictor?: CustomVisionPredictor
 
-  /** The primary training key associated with the account. */
-  private trainingKey: string
-
   /** The primary prediction key associated with the account. */
   private predictionKey?: string
+
+  /** The primary training key associated with the account. */
+  private trainingKey: string
 
   /** The account information. */
   private accountInfo?: Account
@@ -49,9 +49,21 @@ export class CustomVision {
     }
   }
 
+  get predictor() {
+    if (!this.predictionKey) {
+      throw new Error('No prediction key found')
+    }
+
+    if (!this._predictor) {
+      throw new Error('No projects specified')
+    }
+
+    return this._predictor
+  }
+
   get trainer() {
     if (!this._trainer) {
-      throw new Error('')
+      throw new Error('No projects specified')
     }
 
     return this._trainer
